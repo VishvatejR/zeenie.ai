@@ -1,5 +1,3 @@
-Here's a GitHub-ready README based on your workflow configuration. It reflects the actual nodes and settings from the uploaded workflow. 
-
 # WhatsApp AI Assistant
 
 A WhatsApp AI Assistant built with MachinaOS that combines Gemini, conversation memory, and live web search to provide intelligent responses directly on WhatsApp.
