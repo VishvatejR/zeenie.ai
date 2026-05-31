@@ -1,0 +1,276 @@
+{
+  "id": "workflow-1780206875349-ue0tw22y7",
+  "name": "Whatsapp AI Assistant",
+  "nodes": [
+    {
+      "id": "whatsappReceive-1780206903689",
+      "type": "whatsappReceive",
+      "position": {
+        "x": -340,
+        "y": -100
+      },
+      "data": {
+        "label": "WhatsApp Receive"
+      },
+      "width": 106,
+      "height": 83,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -340,
+        "y": -100
+      },
+      "dragging": true
+    },
+    {
+      "id": "aiAgent-1780206963569",
+      "type": "aiAgent",
+      "position": {
+        "x": -160,
+        "y": -80
+      },
+      "data": {
+        "label": "AI Agent"
+      },
+      "width": 300,
+      "height": 200,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": -160,
+        "y": -80
+      }
+    },
+    {
+      "id": "whatsappSend-1780207057390",
+      "type": "whatsappSend",
+      "position": {
+        "x": 220,
+        "y": 20
+      },
+      "data": {
+        "label": "WhatsApp Send"
+      },
+      "width": 90,
+      "height": 83,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 220,
+        "y": 20
+      },
+      "dragging": true
+    },
+    {
+      "id": "simpleMemory-1780207102252",
+      "type": "simpleMemory",
+      "position": {
+        "x": -340,
+        "y": 60
+      },
+      "data": {
+        "label": "Simple Memory"
+      },
+      "width": 87,
+      "height": 83,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -340,
+        "y": 60
+      },
+      "dragging": false
+    },
+    {
+      "id": "duckduckgoSearch-1780207149253",
+      "type": "duckduckgoSearch",
+      "position": {
+        "x": 0,
+        "y": 180
+      },
+      "data": {
+        "label": "DuckDuckGo Search"
+      },
+      "width": 116,
+      "height": 83,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 0,
+        "y": 180
+      },
+      "dragging": false
+    },
+    {
+      "id": "masterSkill-1780207157210-224",
+      "type": "masterSkill",
+      "position": {
+        "x": -200,
+        "y": 180
+      },
+      "data": {
+        "label": "Master Skill"
+      },
+      "width": 67,
+      "height": 83,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -200,
+        "y": 180
+      },
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "type": "smoothstep",
+      "animated": true,
+      "style": {
+        "stroke": "#8be9fd",
+        "strokeWidth": 3
+      },
+      "source": "whatsappReceive-1780206903689",
+      "sourceHandle": "output-main",
+      "target": "aiAgent-1780206963569",
+      "targetHandle": "input-main",
+      "id": "reactflow__edge-whatsappReceive-1780206903689output-main-aiAgent-1780206963569input-main",
+      "selected": false
+    },
+    {
+      "type": "smoothstep",
+      "animated": true,
+      "style": {
+        "stroke": "#8be9fd",
+        "strokeWidth": 3
+      },
+      "source": "aiAgent-1780206963569",
+      "sourceHandle": "output-main",
+      "target": "whatsappSend-1780207057390",
+      "targetHandle": "output-tool",
+      "id": "reactflow__edge-aiAgent-1780206963569output-main-whatsappSend-1780207057390output-tool",
+      "selected": false
+    },
+    {
+      "type": "smoothstep",
+      "animated": true,
+      "style": {
+        "stroke": "#8be9fd",
+        "strokeWidth": 3
+      },
+      "source": "aiAgent-1780206963569",
+      "sourceHandle": "input-memory",
+      "target": "simpleMemory-1780207102252",
+      "targetHandle": "input-main",
+      "id": "reactflow__edge-aiAgent-1780206963569input-memory-simpleMemory-1780207102252input-main",
+      "selected": false
+    },
+    {
+      "type": "smoothstep",
+      "animated": true,
+      "style": {
+        "stroke": "#8be9fd",
+        "strokeWidth": 3
+      },
+      "source": "simpleMemory-1780207102252",
+      "sourceHandle": "output-tool",
+      "target": "aiAgent-1780206963569",
+      "targetHandle": "input-memory",
+      "id": "reactflow__edge-simpleMemory-1780207102252output-tool-aiAgent-1780206963569input-memory",
+      "selected": false
+    },
+    {
+      "type": "smoothstep",
+      "animated": true,
+      "style": {
+        "stroke": "#8be9fd",
+        "strokeWidth": 3
+      },
+      "source": "duckduckgoSearch-1780207149253",
+      "sourceHandle": "output-tool",
+      "target": "aiAgent-1780206963569",
+      "targetHandle": "input-tools",
+      "id": "reactflow__edge-duckduckgoSearch-1780207149253output-tool-aiAgent-1780206963569input-tools",
+      "selected": false
+    },
+    {
+      "id": "e-masterSkill-1780207157210-224-aiAgent-1780206963569-1780207157253-576",
+      "source": "masterSkill-1780207157210-224",
+      "target": "aiAgent-1780206963569",
+      "sourceHandle": "output-tool",
+      "targetHandle": "input-skill",
+      "selected": false
+    }
+  ],
+  "createdAt": "2026-05-31T00:31:28.043Z",
+  "lastModified": "2026-05-31T00:34:21.000Z",
+  "version": "0.0.72",
+  "nodeParameters": {
+    "whatsappReceive-1780206903689": {
+      "message_type_filter": "all",
+      "filter": "all",
+      "phone_number": "",
+      "group_id": "",
+      "sender_number": "",
+      "channel_jid": "",
+      "keywords": "",
+      "forwarded_filter": "all",
+      "ignore_own_messages": false,
+      "include_media_data": false,
+      "label": "WhatsApp Receive"
+    },
+    "aiAgent-1780206963569": {
+      "prompt": "{{whatsappreceive.text}}",
+      "provider": "gemini",
+      "model": "gemini-flash-latest",
+      "system_message": "You are a helpful assistant.\nIn case if user asks for some live information or data, use duckduckgo search tool and use the time as {{whatsappreceive.timestamp}}",
+      "label": "AI Agent"
+    },
+    "whatsappSend-1780207057390": {
+      "recipient_type": "self",
+      "phone": "",
+      "group_id": "",
+      "channel_jid": "",
+      "message_type": "text",
+      "message": "{{aiagent.response}}",
+      "format_markdown": true,
+      "media_source": "base64",
+      "media_data": "",
+      "file_path": "",
+      "media_url": "",
+      "mime_type": "",
+      "caption": "",
+      "filename": "",
+      "latitude": 0,
+      "longitude": 0,
+      "location_name": "",
+      "address": "",
+      "contact_name": "",
+      "vcard": "",
+      "is_reply": false,
+      "reply_message_id": "",
+      "reply_sender": "",
+      "reply_content": "",
+      "label": "WhatsApp Send"
+    },
+    "simpleMemory-1780207102252": {
+      "session_id": "",
+      "window_size": 100,
+      "memory_content": "# Conversation History\n\n\n### **Human** (2026-05-31 11:32:46)\nHi\n\n### **Assistant** (2026-05-31 11:32:46)\nHello! How can I help you today?\n\n### **Human** (2026-05-31 11:33:38)\nHi\n\n### **Assistant** (2026-05-31 11:33:38)\nHello! How can I help you today?\n\n### **Human** (2026-05-31 11:35:29)\nHi\n\n### **Assistant** (2026-05-31 11:35:29)\nHello! How can I help you today?\n",
+      "long_term_enabled": false,
+      "retrieval_count": 3,
+      "last_session_id": null,
+      "label": "Simple Memory"
+    },
+    "duckduckgoSearch-1780207149253": {
+      "query": "{{whatsappreceive.text}}",
+      "max_results": 5,
+      "label": "DuckDuckGo Search"
+    },
+    "masterSkill-1780207157210-224": {
+      "label": "Master Skill",
+      "skills_config": {
+        "duckduckgo-search-skill": {
+          "enabled": true,
+          "instructions": "",
+          "isCustomized": false
+        }
+      }
+    }
+  }
+}
