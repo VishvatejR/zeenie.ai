@@ -2,6 +2,11 @@
 
 A WhatsApp AI Assistant built with MachinaOS that combines Gemini, conversation memory, and live web search to provide intelligent responses directly on WhatsApp.
 
+## Youtube Video 
+Click on the link below to watch the video explaining everything from basics
+
+https://www.youtube.com/watch?v=HOkDpAoqgPE
+
 ## Features
 
 * 💬 WhatsApp message handling
